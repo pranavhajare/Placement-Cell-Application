@@ -16,6 +16,9 @@ const cors = require("cors");
 //Require the Morgan Module for Logging
 const logger = require("morgan");
 
+//Require the View Helpers
+const viewHelpers = require("./config/view-helpers")(app);
+
 //Require the Environment File for getting the Environment Variables 
 const env = require("./config/environment");
 
