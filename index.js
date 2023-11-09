@@ -40,8 +40,31 @@ app.use(express.urlencoded({ extended: true }));
 //Middleware - JSON Encoder
 app.use(express.json());
 
+//Requires the Express-EJS-Layouts Module
+const expressLayouts = require("express-ejs-layouts");
+
+//Requires the EJS Module
+const ejs = require("ejs");
+
+//Middleware - Express App uses Static Files in the Assets Folder
+app.use(express.static(env.asset_path));
+//Middleware - Express App uses expressLayouts to tell that the views which are going to be rendered belongs to some layout.
+app.use(expressLayouts);
+
 //Middleware - Morgan used for Logging
 app.use(logger(env.morgan.mode, env.morgan.options));
+
+//Set Up - Extract Styles from Sub Pages into the Layout.
+app.set("layout extractStyles", true);
+
+//Set Up - Extract Scripts from Sub Pages into the Layout.
+app.set("layout extractScripts", true);
+
+//Set Up - Template Engine as EJS
+app.set("view engine", "ejs");
+
+//Set Up - Template Engine Views Folder Path (..../views)
+app.set("views", path.join(__dirname, "views"));
 
 //Middleware - App calls index.js - Route File, whenever '/' route is called in the request.
 app.use("/", route);
