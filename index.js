@@ -34,6 +34,10 @@ const route = require("./routes/index");
 //Middleware - CORS
 app.use(cors());
 
+
+//Requires the Node SASS Middleware Module
+const sassMiddleware = require("node-sass-middleware");
+
 //Middleware - SASS Middleware
 if (env.name == "development") {
 	app.use(
@@ -63,9 +67,6 @@ const expressLayouts = require("express-ejs-layouts");
 
 //Requires the EJS Module
 const ejs = require("ejs");
-
-//Requires the Node SASS Middleware Module
-const sassMiddleware = require("node-sass-middleware");
 
 //Middleware - Express App uses Static Files in the Assets Folder
 app.use(express.static(env.asset_path));
