@@ -91,3 +91,14 @@ module.exports.DBValidation = (req, res, err) => {
 
 	return res.json(obj);
 };
+
+
+
+//Sets the Flash Message into the Locals of the Response Body
+module.exports.setFlash = (req, res, next) => {
+	res.locals.flash = {
+		success: req.flash("success"),
+		error: req.flash("error"),
+	};
+	next();
+};
