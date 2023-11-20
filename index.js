@@ -1,6 +1,8 @@
 //Require Express Module for running the Express Server
 const express = require("express");
 
+//Requires MongoDB
+const db = require("./config/mongoose");
 //Create Express App for Request-Response Cycle & to create the Express Server
 const app = express();
 
@@ -27,6 +29,7 @@ const viewHelpers = require("./config/view-helpers")(app);
 
 //Require the Environment File for getting the Environment Variables 
 const env = require("./config/environment");
+
 
 //Requires the index.js - Route File, from the Routes Folder.
 const route = require("./routes/index");
