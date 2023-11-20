@@ -1,6 +1,9 @@
 {
 	try {
+	// Displays the Notifications on the Screen
+	const Notification = () => {
 		const noty = document.getElementById("Noty");
+		if (noty === null || noty === undefined) return;
 		const notyType = noty.getAttribute("data");
 		const notyText = noty.value;
 
@@ -35,6 +38,8 @@
 				},
 			}).show();
 		}
+	};
+	Notification();	
 	} catch (error) {
 		console.log(error);
 	}
