@@ -33,7 +33,10 @@
         //FRONTEND VALIDATION :: Frontend Form Validation
         let email = document.getElementById("exampleInputEmail1").value;
         const pass = document.getElementById("exampleInputPassword1").value;
-        const regex = /^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/;
+		const regex1 = /\S+@\S+\.\S+/;
+		const regex2 = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+		const at = email.indexOf("@");
+		const dot = email.indexOf(".");
         email = email.trim();
 
         if (email === "") return notify("error", "Email is Required ❌");
@@ -43,11 +46,7 @@
           notify("error", message);
           return;
         }
-        if (!email.match(regex)) {
-          let message = "Invalid Email Address ❌";
-          notify("error", message);
-          return;
-        }
+       
 
         document.querySelector("form").submit();
       });
