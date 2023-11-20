@@ -73,3 +73,6 @@
 ::1 - - [20/Nov/2023:13:14:56 +0000] "GET /signup HTTP/1.1" 304 - "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
 ::1 - - [20/Nov/2023:13:14:56 +0000] "GET /images/logo.png HTTP/1.1" 404 154 "http://localhost:8000/signup" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
 ::1 - - [20/Nov/2023:13:14:57 +0000] "GET /storage/sounds/Ting.mp3 HTTP/1.1" 404 162 "http://localhost:8000/signup" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+::1 - - [20/Nov/2023:13:39:43 +0000] "GET /signup HTTP/1.1" 200 4283 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+::1 - - [20/Nov/2023:13:39:43 +0000] "GET /images/logo.png HTTP/1.1" 404 154 "http://localhost:8000/signup" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+::1 - - [20/Nov/2023:13:39:47 +0000] "GET /storage/sounds/Ting.mp3 HTTP/1.1" 404 162 "http://localhost:8000/signup" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"

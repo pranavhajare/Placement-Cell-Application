@@ -26,11 +26,7 @@ return res.render("home", {
 
 //Displays the Sign Up Page
 module.exports.signup = (req, res) => {
-	if (req.isAuthenticated()) {
-		return res.render("home", {
-			title: "Home 🏠",
-		});
-	}
+	if (req.isAuthenticated()) return res.redirect("/");
 	return res.render("signup", {
 		title: "Sign Up 📝",
 	});
@@ -39,6 +35,8 @@ module.exports.signup = (req, res) => {
 
 //Creates a New User
 module.exports.createUser = async (req, res) => {
+	if (req.isAuthenticated()) return res.redirect("/");
+	
 	//BACKEND VALIDATION :: Validation Result from the Router
 	const errors = validationResult(req);
 
@@ -89,6 +87,7 @@ module.exports.createUser = async (req, res) => {
 
 //Creates a New Session or Logs the User In
 module.exports.createSession = async (req, res) => {
+	if (req.isAuthenticated()) return res.redirect("/");
 	req.flash("success", "Logged In Successfully 🔥");
 	return res.redirect("/");
 };
