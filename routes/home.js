@@ -37,5 +37,11 @@ router.post(
 );
 //Access the Home Controller's destroySession() Function @ '/destroy-session' route.
 router.get("/destroy-session", homeController.destroySession);
+//Access the Home Controller's profile() Function @ '/profile/:id' route.
+router.get(
+	"/profile/:id",
+	passport.checkAuthentication,
+	homeController.profile
+);
 //Export the Router
 module.exports = router;
