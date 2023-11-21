@@ -20,17 +20,17 @@
 
 //---------Root Styling :: CSS Variables---------
 :root {
-	--background-color: #000000;
+	--background-color: #ffe9ae;
 	--header-color: #ffdba4;
-	--logo-color: #1f1a1a;
+	--logo-color: #000000;
 	--accent-color: #ffffff;
+	--font-family: "Poppins", sans-serif;
 	font-family: "Poppins", sans-serif;
 }
 
 //---------Body---------
 body {
 	scroll-behavior: smooth;
-	
 	&::-webkit-scrollbar {
 		display: none;
 		overflow: hidden;
@@ -57,7 +57,7 @@ h3 {
 //---------Main Content Body---------
 main {
 	--bg-image: var(--BG);
-	--bg-opacity: 0.8;
+	--bg-opacity: 0.7;
 	width: 100vw;
 	height: 100%;
 	min-height: 100vh;
@@ -80,4 +80,18 @@ main {
 		z-index: -1;
 		opacity: var(--bg-opacity);
 	}
+}
+
+//---------Utility Classes---------
+.hide {
+	display: none !important;
+}
+.show-init {
+	display: initial !important;
+}
+.show-block {
+	display: block !important;
+}
+.show-flex {
+	display: flex !important;
 }

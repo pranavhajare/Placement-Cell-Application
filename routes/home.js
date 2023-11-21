@@ -43,5 +43,7 @@ router.get(
 	passport.checkAuthentication,
 	homeController.profile
 );
+//Access the Home Controller's update() Function @ '/update/:id' route.
+router.post("/update/:id", passport.checkAuthentication, homeController.update);
 //Export the Router
 module.exports = router;
