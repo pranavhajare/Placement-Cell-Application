@@ -150,9 +150,18 @@ module.exports.update = async (req, res) => {
 				//Set Name & Email
 				employee.name = req.body.name;
 				employee.email = req.body.email;
-				const salt = await bcrypt.genSalt(10);
-				const hashedPassword = await bcrypt.hash(req.body.password, salt);
-				employee.password = hashedPassword;
+				// const salt = await bcrypt.genSalt(10);
+				// const hashedPassword = await bcrypt.hash(req.body.password, salt);
+				// employee.password = hashedPassword;
+
+				if (req.body.password !== employee.password) {
+					const salt = await bcrypt.genSalt(10);
+					const hashedPassword = await bcrypt.hash(
+						req.body.password,
+						salt
+					);
+					employee.password = hashedPassword;
+				}
 
 				//If Incoming File Exists
 				if (req.file) {
