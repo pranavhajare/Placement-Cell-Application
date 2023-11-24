@@ -1,7 +1,6 @@
 <link rel="stylesheet" href="<%= assetPath('css/profile.css') %>" />
 <script defer src="<%= assetPath('js/update-profile.js') %>"></script>
-<!-- Header -->
-<%- include('_header.ejs'); %>
+
 <!-- If User is logged in -->
 <% if (locals.user) { %>
 <input
@@ -23,8 +22,11 @@
 			<div class="form-container">
 				<div
 					class="upload-wrapper"
-					<img src="<%= profile_user.avatarPath %>" alt="Employee Image" />
-				>
+					<img
+						src="<%= profile_user.avatarPath %>"
+						alt="Employee Image"
+						this.
+					/>
 					<button class="btn btn-grad"></button>
 					<input
 						type="file"
@@ -32,6 +34,7 @@
 						class="image"
 						placeholder="Profile Picture"
 						accept="image/png, image/gif, image/jpeg, image/jpg, image/svg"
+						onerror="this.onerror=null; this.src=`<%= assetPath('images/empty-avatar.png') %>`"
 					/>
 				</div>
 				<div class="info">
